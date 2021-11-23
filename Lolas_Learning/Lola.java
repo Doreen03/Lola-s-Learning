@@ -25,131 +25,195 @@ public class Lola extends Actor
     private GreenfootImage animateDown3 = new GreenfootImage("down3sample.png");
     private GreenfootImage animateDown4 = new GreenfootImage("down4sample.png");
     
+    private int speed = 2;
+    private boolean walking;
+    private boolean isKeyPressed;
+    
+    private int animationFrame = 0;
+    private int animationCounter = 0;
+    
     /**
      * Act - do whatever the Lola wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        walk();
+        checkKey();
         checkObstacle();
-    }
-    
-    public void walk()
-    {
-        setImage(animateDown1);
-        if (Greenfoot.isKeyDown("Left")) 
+        animationCounter++;
+        if (!isKeyPressed)
         {
-            setLocation(getX() - 2, getY());
-            animate("left");
-        }
-        if (Greenfoot.isKeyDown("Right")) 
-        {
-            setLocation(getX() + 2, getY());
-            animate("right");
-        }
-        if (Greenfoot.isKeyDown("Up")) 
-        {
-            setLocation(getX(), getY() - 2);
-            animate("up");
-        }
-        if (Greenfoot.isKeyDown("Down")) 
-        {
-            setLocation(getX(), getY() + 2);
-            animate("down");
+            setImage(animateDown1);
         }
     }
     
-    public void animate(String direction)
+    public void checkKey()
     {
-        if (direction == "left")
+        isKeyPressed = false;
+        if (Greenfoot.isKeyDown("left"))
         {
-            if (getImage() == animateDown1)
-            {
-                setImage(animateLeft1);
-            }
-            if (getImage() == animateLeft1)
-            {
-                setImage(animateLeft2);
-            }
-            if (getImage() == animateLeft2)
-            {
-                setImage(animateLeft3);
-            }
-            if (getImage() == animateLeft3)
-            {
-                setImage(animateLeft4);
-            }
-            if (getImage() == animateLeft4)
-            {
-                setImage(animateLeft1);
-            }
+            isKeyPressed = true;
+            moveLeft();
         }
-        if (direction == "right")
+        if (Greenfoot.isKeyDown("right"))
         {
-            if (getImage() == animateDown1)
-            {
-                setImage(animateRight1);
-            }
-            if (getImage() == animateRight1)
-            {
-                setImage(animateRight2);
-            }
-            if (getImage() == animateRight2)
-            {
-                setImage(animateRight3);
-            }
-            if (getImage() == animateRight3)
-            {
-                setImage(animateRight4);
-            }
-            if (getImage() == animateRight4)
-            {
-                setImage(animateRight1);
-            }
+            isKeyPressed = true;
+            moveRight();
         }
-        if (direction == "up")
+        if (Greenfoot.isKeyDown("up"))
         {
-            if (getImage() == animateDown1)
-            {
-                setImage(animateUp1);
-            }
-            if (getImage() == animateUp1)
-            {
-                setImage(animateUp2);
-            }
-            if (getImage() == animateUp2)
-            {
-                setImage(animateUp3);
-            }
-            if (getImage() == animateUp3)
-            {
-                setImage(animateUp4);
-            }
-            if (getImage() == animateUp4)
-            {
-                setImage(animateUp1);
-            }
+            isKeyPressed = true;
+            moveUp();
         }
-        if (direction == "down")
+        if (Greenfoot.isKeyDown("down"))
         {
-            if (getImage() == animateDown1)
-            {
-                setImage(animateDown2);
-            }
-            if (getImage() == animateDown2)
-            {
-                setImage(animateDown3);
-            }
-            if (getImage() == animateDown3)
-            {
-                setImage(animateDown4);
-            }
-            if (getImage() == animateDown4)
-            {
-                setImage(animateDown1);
-            }
+            isKeyPressed = true;
+            moveDown();
         }
+    }
+    
+    public void moveLeft()
+    {
+        setLocation(getX() - speed, getY());
+        if (animationCounter % 4 == 0)
+        {
+            animateLeft();
+        }
+    }
+    
+    public void moveRight()
+    {
+        setLocation(getX() + speed, getY());
+        if (animationCounter % 4 == 0)
+        {
+            animateRight();
+        }
+    }
+    
+    public void moveUp()
+    {
+        setLocation(getX(), getY() - speed);
+        if (animationCounter % 4 == 0)
+        {
+            animateUp();
+        }
+    }
+    
+    public void moveDown()
+    {
+        setLocation(getX(), getY() + speed);
+        if (animationCounter % 4 == 0)
+        {
+            animateDown();
+        }
+    }
+    
+    public void animateLeft()
+    {
+        if (animationFrame == 0)
+        {
+            setImage(animateLeft1);
+        }
+        else if (animationFrame == 1)
+        {
+            setImage(animateLeft2);
+        }
+        else if (animationFrame == 2)
+        {
+            setImage(animateLeft3);
+        }
+        else if (animationFrame == 3)
+        {
+            setImage(animateLeft4);
+        }
+        else if (animationFrame == 4)
+        {
+            animationFrame = 0;
+            setImage(animateLeft1);
+        }
+        animationFrame++;
+        return;
+    }
+    
+    public void animateRight()
+    {
+        if (animationFrame == 0)
+        {
+            setImage(animateRight1);
+        }
+        else if (animationFrame == 1)
+        {
+            setImage(animateRight2);
+        }
+        else if (animationFrame == 2)
+        {
+            setImage(animateRight3);
+        }
+        else if (animationFrame == 3)
+        {
+            setImage(animateRight4);
+        }
+        else if (animationFrame == 4)
+        {
+            animationFrame = 0;
+            setImage(animateRight1);
+        }
+        animationFrame++;
+        return;
+    }
+    
+    public void animateUp()
+    {
+        if (animationFrame == 0)
+        {
+            setImage(animateUp1);
+        }
+        else if (animationFrame == 1)
+        {
+            setImage(animateUp2);
+        }
+        else if (animationFrame == 2)
+        {
+            setImage(animateUp3);
+        }
+        else if (animationFrame == 3)
+        {
+            setImage(animateUp4);
+        }
+        else if (animationFrame == 4)
+        {
+            animationFrame = 0;
+            setImage(animateUp1);
+        }
+        animationFrame++;
+        return;
+    }
+    
+    public void animateDown()
+    {
+        if (animationFrame == 0)
+        {
+            setImage(animateDown1);
+        }
+        else if (animationFrame == 1)
+        {
+            setImage(animateDown2);
+        }
+        else if (animationFrame == 2)
+        {
+            setImage(animateDown3);
+        }
+        else if (animationFrame == 3)
+        {
+            setImage(animateDown4);
+        }
+        else if (animationFrame == 4)
+        {
+            animationFrame = 0;
+            setImage(animateDown1);
+        }
+        animationFrame++;
+        return;
     }
     
     public void checkObstacle()
