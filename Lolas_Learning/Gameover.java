@@ -16,6 +16,6 @@ public class Gameover extends World
     public Gameover()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(640, 480, 1); 
+        super(1152, 648, 1); 
     }
 }

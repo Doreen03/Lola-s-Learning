@@ -39,7 +39,6 @@ public class Lola extends Actor
     public void act()
     {
         checkKey();
-        checkObstacle();
         animationCounter++;
         if (!isKeyPressed)
         {
@@ -216,9 +215,15 @@ public class Lola extends Actor
         return;
     }
     
-    public void checkObstacle()
+    public void setLocation(int x, int y)
     {
-        
+        int oldX = getX();
+        int oldY = getY();
+        super.setLocation(x, y);
+        if(!getIntersectingObjects(Desk.class).isEmpty())
+        {
+            super.setLocation(oldX, oldY);
+        }
     }
 }
 
