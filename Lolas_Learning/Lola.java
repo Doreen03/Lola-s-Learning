@@ -46,31 +46,41 @@ public class Lola extends Actor
         }
     }
     
+    /**
+     * This method checks the key that is pressed.
+     */
     public void checkKey()
     {
         isKeyPressed = false;
-        if (Greenfoot.isKeyDown("left"))
+        if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
             isKeyPressed = true;
             moveLeft();
         }
-        if (Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             isKeyPressed = true;
             moveRight();
         }
-        if (Greenfoot.isKeyDown("up"))
+        if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
         {
             isKeyPressed = true;
             moveUp();
         }
-        if (Greenfoot.isKeyDown("down"))
+        if (Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
         {
             isKeyPressed = true;
             moveDown();
         }
+        if (Greenfoot.isKeyDown("e") && isTouching(TeacherDesk.class))
+        {
+            // call a method to activate the question
+        }
     }
     
+    /**
+     * This method is to make Lola walk to the left.
+     */
     public void moveLeft()
     {
         setLocation(getX() - speed, getY());
@@ -80,6 +90,9 @@ public class Lola extends Actor
         }
     }
     
+    /**
+     * This method is to make Lola walk to the right.
+     */
     public void moveRight()
     {
         setLocation(getX() + speed, getY());
@@ -89,6 +102,9 @@ public class Lola extends Actor
         }
     }
     
+    /**
+     * This method is to make Lola walk upwards.
+     */
     public void moveUp()
     {
         setLocation(getX(), getY() - speed);
@@ -98,6 +114,9 @@ public class Lola extends Actor
         }
     }
     
+    /**
+     * This method is to make Lola walk downwards.
+     */
     public void moveDown()
     {
         setLocation(getX(), getY() + speed);
@@ -107,6 +126,9 @@ public class Lola extends Actor
         }
     }
     
+    /**
+     * This method animates Lola when she walks to the left.
+     */
     public void animateLeft()
     {
         if (animationFrame == 0)
@@ -134,6 +156,9 @@ public class Lola extends Actor
         return;
     }
     
+    /**
+     * This method animates Lola when she walks to the right.
+     */
     public void animateRight()
     {
         if (animationFrame == 0)
@@ -161,6 +186,9 @@ public class Lola extends Actor
         return;
     }
     
+    /**
+     * This method animates Lola when she walks upwards.
+     */
     public void animateUp()
     {
         if (animationFrame == 0)
@@ -188,6 +216,9 @@ public class Lola extends Actor
         return;
     }
     
+    /**
+     * This method animates Lola when she walks downwards.
+     */
     public void animateDown()
     {
         if (animationFrame == 0)
@@ -215,6 +246,10 @@ public class Lola extends Actor
         return;
     }
     
+    /**
+     * This method overrides the setLocation method to prevent Lola from walking through
+     * other objects.
+     */
     public void setLocation(int x, int y)
     {
         int oldX = getX();
