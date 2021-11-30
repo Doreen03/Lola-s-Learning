@@ -27,20 +27,5 @@ public class MainMenu extends World
         MainMenuText mainMenuText = new MainMenuText();
         addObject(mainMenuText,1000,125);
         play.setLocation(600,330);
-    }   
-    //    TeacherDesk teacherDesk = new TeacherDesk();
-    //    addObject(teacherDesk, 500, getHeight() / 2);
-    //    Lola lola = new Lola();
-    //    addObject(lola, 100, getHeight() / 2);
-    //    for (int i = 1; i <= 6; i++) 
-    //    {
-    //        StudentDesk studentDesk = new StudentDesk();
-    //        if (i <= 3) 
-    //            addObject(studentDesk, i * 125, 100);
-    //        else 
-    //            addObject(studentDesk, (i - 3) * 125, 300);
-    //    }
-    //}
-    
-    
+    }
 }

@@ -16,16 +16,16 @@ public class Lola extends Actor
     private GreenfootImage animateRight2 = new GreenfootImage("right2sample.png");
     private GreenfootImage animateRight3 = new GreenfootImage("right3sample.png");
     private GreenfootImage animateRight4 = new GreenfootImage("right4sample.png");
-    private GreenfootImage animateUp1 = new GreenfootImage("up1sample.png");
-    private GreenfootImage animateUp2 = new GreenfootImage("up2sample.png");
-    private GreenfootImage animateUp3 = new GreenfootImage("up3sample.png");
-    private GreenfootImage animateUp4 = new GreenfootImage("up4sample.png");
-    private GreenfootImage animateDown1 = new GreenfootImage("down1sample.png");
-    private GreenfootImage animateDown2 = new GreenfootImage("down2sample.png");
-    private GreenfootImage animateDown3 = new GreenfootImage("down3sample.png");
-    private GreenfootImage animateDown4 = new GreenfootImage("down4sample.png");
+    private GreenfootImage animateUp1 = new GreenfootImage("lola_back_idle.png");
+    private GreenfootImage animateUp2 = new GreenfootImage("lola_back_1.png");
+    private GreenfootImage animateUp3 = new GreenfootImage("lola_back_idle.png");
+    private GreenfootImage animateUp4 = new GreenfootImage("lola_back_2.png");
+    private GreenfootImage animateDown1 = new GreenfootImage("lola_front_idle.png");
+    private GreenfootImage animateDown2 = new GreenfootImage("lola_front_1.png");
+    private GreenfootImage animateDown3 = new GreenfootImage("lola_front_idle.png");
+    private GreenfootImage animateDown4 = new GreenfootImage("lola_front_2.png");
     
-    private int speed = 2;
+    private int speed = 4;
     private boolean walking;
     private boolean isKeyPressed;
     
@@ -39,6 +39,7 @@ public class Lola extends Actor
     public void act()
     {
         checkKey();
+        enterDoor();
         animationCounter++;
         if (!isKeyPressed)
         {
@@ -74,7 +75,21 @@ public class Lola extends Actor
         }
         if (Greenfoot.isKeyDown("e") && isTouching(TeacherDesk.class))
         {
-            // call a method to activate the question
+            Classroom classroom = (Classroom)getWorld();
+            classroom.setIsQandAActivated(true);
+            // ExitDoor.setIsOpen(true);
+        }
+    }
+    
+    private void enterDoor()
+    {
+        if (ExitDoor.getIsOpen())
+        {
+            if (!getIntersectingObjects(ExitDoor.class).isEmpty())
+            {
+                Classroom classroom = (Classroom)getWorld();
+                classroom.enterHallway();
+            }
         }
     }
     
