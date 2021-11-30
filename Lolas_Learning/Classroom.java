@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class Classroom here.
@@ -10,6 +11,12 @@ public class Classroom extends World
 {
     private int levelCounter = 0;
     private int questionCounter = 1;
+    private static boolean isQandAActivated = false;
+    
+    public ExitDoor exitDoor;
+    private Answer[] answers = 
+        {new Answer(), new Answer(), new Answer(), new Answer()};
+    Question question = new Question();
 
     private GreenfootImage backgroundLevel0 = new GreenfootImage("level0classroom.png");
     private GreenfootImage backgroundLevel1 = new GreenfootImage("level1sample.png");
@@ -29,8 +36,24 @@ public class Classroom extends World
         setBackground(backgroundLevel0);
         levelCounter = 0;
         questionCounter = 1;
+        isQandAActivated = false;
         prepare();
+        createDoor();
     }
+    
+    public void act() 
+    {
+        if (isQandAActivated)
+        {
+            createQandAs();
+            isQandAActivated = false;
+        }
+        if (Greenfoot.isKeyDown("q"))
+        {
+            removeQandAs();
+        }
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -47,19 +70,46 @@ public class Classroom extends World
         addObject(studentDesk4, 550, 500);
         TeacherDesk teacherDesk = new TeacherDesk();
         addObject(teacherDesk, 811, 376);
-    //{
-    //    TeacherDesk teacherDesk = new TeacherDesk();
-    //    addObject(teacherDesk, 500, getHeight() / 2);
-    //    Lola lola = new Lola();
-    //    addObject(lola, 100, getHeight() / 2);
-    //    for (int i = 1; i <= 6; i++) 
-    //    {
-    //        StudentDesk studentDesk = new StudentDesk();
-    //        if (i <= 3) 
-    //            addObject(studentDesk, i * 125, 100);
-    //        else 
-    //            addObject(studentDesk, (i - 3) * 125, 300);
-    //    }
-    //}
+        Lola lola = new Lola();
+        addObject(lola, 700, 375);
+    }
+    
+    private void createDoor()
+    {
+        exitDoor = new ExitDoor();
+        addObject(exitDoor, 1060, 370);
+    }
+    
+    public static void setIsQandAActivated(boolean flag)
+    {
+        isQandAActivated = flag;
+    }
+    
+    private void createQandAs()
+    {
+        addObject(question, getWidth() / 2, 275);
+        for (int i = 0; i < 4; i++)
+        {
+            if (i < 2)
+            {
+                addObject(answers[i], (i + 1) * 175 + 315, 400);
+            }
+            else
+            {
+                addObject(answers[i], (i - 1) * 175 + 315, 500);
+            }
+        }
+        return;
+    }
+    
+    private void removeQandAs()
+    {
+        removeObject(question);
+        removeObjects(getObjects(Answer.class));
+    }
+     
+    public static void enterHallway()
+    {
+        Greenfoot.setWorld(new Hallway());
     }
 }
