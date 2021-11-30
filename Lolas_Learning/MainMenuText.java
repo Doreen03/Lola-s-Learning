@@ -8,10 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainMenuText extends Actor
 {
-    /**
-     * Act - do whatever the MainMenuText wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public MainMenuText()
+    {
+        GreenfootImage mainMenuText = new GreenfootImage(1200,70);
+        Font adjustedFont = new Font(true, false, 50);
+        mainMenuText.setFont(adjustedFont);
+        mainMenuText.setColor(Color.BLACK);
+        mainMenuText.drawString("Lola's Learning",0,50);
+        setImage(mainMenuText);
+    }
+
     public void act()
     {
         // Add your action code here.

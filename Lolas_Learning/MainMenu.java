@@ -17,14 +17,17 @@ public class MainMenu extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1152, 648, 1); 
-        // prepare();
+        prepare();
     }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    //private void prepare()
-    //{
+    
+    private void prepare()
+    {
+        Play play = new Play();
+        addObject(play,580,315);
+        MainMenuText mainMenuText = new MainMenuText();
+        addObject(mainMenuText,1000,125);
+        play.setLocation(600,330);
+    }   
     //    TeacherDesk teacherDesk = new TeacherDesk();
     //    addObject(teacherDesk, 500, getHeight() / 2);
     //    Lola lola = new Lola();
