@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ScrollingWall extends Scrolling
 {    public ScrollingWall()
     {
-        GreenfootImage image = getImage();
-        image.scale(2000,900);
+        GreenfootImage image = new GreenfootImage("Untitled.png");
+        image = getImage();
+        image.scale(3000,1000);
         setImage(image);
     }
     
@@ -20,10 +21,12 @@ public class ScrollingWall extends Scrolling
      */
     public void act()
     {
-        setLocation(getX() - 2, getY());
-        if (getX() == -150)
-        {
-            getWorld().removeObject(this);
+        if (this != null) {
+            setLocation(getX() - 2, getY());
+            if (getX() == -350)
+            {
+                getWorld().removeObject(this);
+            }
         }
     }
 }
