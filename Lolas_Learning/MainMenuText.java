@@ -10,7 +10,7 @@ public class MainMenuText extends Actor
 {
     public MainMenuText()
     {
-        GreenfootImage mainMenuText = new GreenfootImage(1200,70);
+        GreenfootImage mainMenuText = new GreenfootImage(500,70);
         Font adjustedFont = new Font(true, false, 50);
         mainMenuText.setFont(adjustedFont);
         mainMenuText.setColor(Color.BLACK);

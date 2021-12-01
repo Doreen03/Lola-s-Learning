@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MainMenuButtons here.
+ * Write a description of class InstructionButtons here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MainMenuButtons extends Actor
+public class InstructionButtons extends Actor
 {
     private boolean mouseOver = false;
     private static int MAX_TRANS = 225;
@@ -35,7 +35,7 @@ public class MainMenuButtons extends Actor
         }
     }
     
-    public void adjTrans(int adjust)
+        public void adjTrans(int adjust)
     {
         GreenfootImage tempImage = getImage();
         tempImage.setTransparency(adjust);

@@ -27,5 +27,14 @@ public class MainMenu extends World
         MainMenuText mainMenuText = new MainMenuText();
         addObject(mainMenuText,1000,125);
         play.setLocation(600,330);
+        play.setLocation(553,332);
+        mainMenuText.setLocation(562,123);
+        CreditsMenu creditsMenu = new CreditsMenu();
+        addObject(creditsMenu,1023,590);
+        InstructionsMenu instructionsMenu = new InstructionsMenu();
+        addObject(instructionsMenu,172,589);
+        creditsMenu.setLocation(1029,587);
+        mainMenuText.setLocation(638,110);
+        play.setLocation(588,288);
     }
 }

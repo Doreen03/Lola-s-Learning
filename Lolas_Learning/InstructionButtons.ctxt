@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=InstructionButtons
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ InstructionButtons\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ checkMouse()
+comment2.params=world
+comment2.target=void\ checkClick(greenfoot.World)
+comment3.params=adjust
+comment3.target=void\ adjTrans(int)
+numComments=4
