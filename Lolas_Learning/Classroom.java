@@ -9,13 +9,14 @@ import java.util.List;
  */
 public class Classroom extends World
 {
-    private int levelCounter = 0;
-    private int questionCounter = 1;
+    private static int levelCounter = 0;
+    private static int classroomCounter = 0;
+    private static int questionCounter = 1;
     private static boolean isQandAActivated = false;
     
     public ExitDoor exitDoor;
     private Answer[] answers = 
-        {new Answer(), new Answer(), new Answer(), new Answer()};
+        {new Answer('A'), new Answer('B'), new Answer('C'), new Answer('D')};
     Question question = new Question();
 
     private GreenfootImage backgroundLevel0 = new GreenfootImage("level0classroom.png");
@@ -41,6 +42,9 @@ public class Classroom extends World
         createDoor();
     }
     
+    /**
+     * Act method: does these actions every act.
+     */
     public void act() 
     {
         if (isQandAActivated)
@@ -74,17 +78,26 @@ public class Classroom extends World
         addObject(lola, 700, 375);
     }
     
+    /**
+     * Creates the Exit Door.
+     */
     private void createDoor()
     {
         exitDoor = new ExitDoor();
         addObject(exitDoor, 1060, 370);
     }
     
+    /**
+     * Setter for isQandAActivated.
+     */
     public static void setIsQandAActivated(boolean flag)
     {
         isQandAActivated = flag;
     }
     
+    /**
+     * Creates the question and answers objects.
+     */
     private void createQandAs()
     {
         addObject(question, getWidth() / 2, 275);
@@ -102,14 +115,101 @@ public class Classroom extends World
         return;
     }
     
-    private void removeQandAs()
+    /**
+     * Deletes the question and answers objects.
+     */
+    public void removeQandAs()
     {
         removeObject(question);
         removeObjects(getObjects(Answer.class));
     }
-     
+    
+    /**
+     * Change world to the Hallway world.
+     */
     public static void enterHallway()
     {
         Greenfoot.setWorld(new Hallway());
+    }
+    
+    /**
+     * Getter for levelCounter
+     */
+    public static int getLevelCounter()
+    {
+        return levelCounter;
+    }
+    
+    /**
+     * Getter for questionCounter
+     */
+    public static int getQuestionCounter()
+    {
+        return questionCounter;
+    }
+    
+    /**
+     * Setter for levelCounter
+     */
+    public static void setLevelCounter(int levelNum)
+    {
+        levelCounter = levelNum;
+    }
+    
+    /**
+     * Setter for questionCounter
+     */
+    public static void setQuestionCounter(int questionNum)
+    {
+        questionCounter = questionNum;
+    }
+    
+    private void checkQuestion()
+    {
+        if (levelCounter == 0)
+        {
+            prepareL0Questions();
+        }
+        else if (levelCounter == 1)
+        {
+            prepareL1Questions();
+        }
+        else if (levelCounter == 2)
+        {
+            prepareL2Questions();
+        }
+        else if (levelCounter == 3)
+        {
+            prepareL3Questions();
+        }
+        else if (levelCounter == 4)
+        {
+            prepareL4Questions();
+        }
+    }
+    
+    private void prepareL0Questions()
+    {
+        
+    }
+    
+    private void prepareL1Questions()
+    {
+    
+    }
+    
+    private void prepareL2Questions()
+    {
+    
+    }
+    
+    private void prepareL3Questions()
+    {
+    
+    }
+    
+    private void prepareL4Questions()
+    {
+    
     }
 }
