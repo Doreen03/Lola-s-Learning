@@ -61,6 +61,14 @@ public class Answer extends Icons
         setImage(tempImage);
     }
     
+        public void PointsRemoved()
+    {
+        if(Greenfoot.mouseClicked(this))
+        {
+            Scoreboard.Grade = Scoreboard.Grade - 10;
+        }
+    }
+    
     public static void createL0Q1()
     {
         

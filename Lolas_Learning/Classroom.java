@@ -76,6 +76,7 @@ public class Classroom extends World
         addObject(teacherDesk, 811, 376);
         Lola lola = new Lola();
         addObject(lola, 700, 375);
+        addObject(new Scoreboard(),55,55);
     }
     
     /**
