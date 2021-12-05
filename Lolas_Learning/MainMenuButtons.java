@@ -10,6 +10,10 @@ public class MainMenuButtons extends Actor
 {
     private boolean mouseOver = false;
     private static int MAX_TRANS = 225;
+    
+    /**
+     * Checks if the mouse is hovering over this. If it is, make the image more transparent.
+     */
     public void checkMouse()
     {
         if(Greenfoot.mouseMoved(null))
@@ -27,6 +31,9 @@ public class MainMenuButtons extends Actor
         }
     }
     
+    /**
+     * Checks to see if the icon is pressed. If it is, changes world to the indicated world.
+     */
     public void checkClick(World world)
     {
         if(Greenfoot.mouseClicked(this))
@@ -35,6 +42,9 @@ public class MainMenuButtons extends Actor
         }
     }
     
+    /**
+     * Changes the transparency of the image if hovered over.
+     */
     public void adjTrans(int adjust)
     {
         GreenfootImage tempImage = getImage();

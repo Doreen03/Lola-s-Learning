@@ -8,17 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Scoreboard extends Icons
 {
-    public static int Grade = 100;
-    private GreenfootImage image1 =  new  GreenfootImage("1.png");
-    private GreenfootImage image2 =  new  GreenfootImage("2.png");
-    private GreenfootImage image3 =  new  GreenfootImage("3.png");
-    private GreenfootImage image4 =  new  GreenfootImage("4.png");
-    private GreenfootImage image5 =  new  GreenfootImage("5.png");
-    private GreenfootImage image6 =  new  GreenfootImage("6.png");
+    public static int grade = 100;
+    private GreenfootImage scoreboard1 = new GreenfootImage("grade100.png");
+    private GreenfootImage scoreboard2 = new GreenfootImage("grade90.png");
+    private GreenfootImage scoreboard3 = new GreenfootImage("grade80.png");
+    private GreenfootImage scoreboard4 = new GreenfootImage("grade70.png");
+    private GreenfootImage scoreboard5 = new GreenfootImage("grade60.png");
+    private GreenfootImage scoreboard6 = new GreenfootImage("grade50.png");
+    private GreenfootImage scoreboard7 = new GreenfootImage("grade40.png");
+    private GreenfootImage scoreboard8 = new GreenfootImage("grade30.png");
+    private GreenfootImage scoreboard9 = new GreenfootImage("grade20.png");
+    private GreenfootImage scoreboard10 = new GreenfootImage("grade10.png");
+    private GreenfootImage scoreboard11 = new GreenfootImage("grade0.png");
+    
     
     public Scoreboard()
     {
-        setImage(image1);
+        setImage(scoreboard1);
     }
     
     /**

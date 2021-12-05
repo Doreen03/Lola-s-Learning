@@ -7,9 +7,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class ScrollingWall extends Scrolling
-{    public ScrollingWall()
+{   
+    public ScrollingWall()
     {
-        GreenfootImage image = new GreenfootImage("Untitled.png");
+        GreenfootImage image = new GreenfootImage("WoodPanel.png");
         image = getImage();
         image.scale(3000,1000);
         setImage(image);

@@ -8,29 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Lola extends Actor
 {
-    private GreenfootImage animateLeft1 = new GreenfootImage("left1sample.png");
-    private GreenfootImage animateLeft2 = new GreenfootImage("left2sample.png");
-    private GreenfootImage animateLeft3 = new GreenfootImage("left3sample.png");
-    private GreenfootImage animateLeft4 = new GreenfootImage("left4sample.png");
-    private GreenfootImage animateRight1 = new GreenfootImage("right1sample.png");
-    private GreenfootImage animateRight2 = new GreenfootImage("right2sample.png");
-    private GreenfootImage animateRight3 = new GreenfootImage("right3sample.png");
-    private GreenfootImage animateRight4 = new GreenfootImage("right4sample.png");
-    private GreenfootImage animateUp1 = new GreenfootImage("lola_back_idle.png");
-    private GreenfootImage animateUp2 = new GreenfootImage("lola_back_1.png");
-    private GreenfootImage animateUp3 = new GreenfootImage("lola_back_idle.png");
-    private GreenfootImage animateUp4 = new GreenfootImage("lola_back_2.png");
-    private GreenfootImage animateDown1 = new GreenfootImage("lola_front_idle.png");
-    private GreenfootImage animateDown2 = new GreenfootImage("lola_front_1.png");
-    private GreenfootImage animateDown3 = new GreenfootImage("lola_front_idle.png");
-    private GreenfootImage animateDown4 = new GreenfootImage("lola_front_2.png");
+    private GreenfootImage[] animations = {
+        new GreenfootImage("lola_left_idle.png"),
+        new GreenfootImage("lola_left_1.png"),
+        new GreenfootImage("lola_left_idle.png"),
+        new GreenfootImage("lola_left_2.png"),
+        new GreenfootImage("lola_right_idle.png"),
+        new GreenfootImage("lola_right_1.png"),
+        new GreenfootImage("lola_right_idle.png"),
+        new GreenfootImage("lola_right_2.png"),
+        new GreenfootImage("lola_back_idle.png"),
+        new GreenfootImage("lola_back_1.png"),
+        new GreenfootImage("lola_back_idle.png"),
+        new GreenfootImage("lola_back_2.png"),
+        new GreenfootImage("lola_front_idle.png"),
+        new GreenfootImage("lola_front_1.png"),
+        new GreenfootImage("lola_front_idle.png"),
+        new GreenfootImage("lola_front_2.png"),
+    };
     
-    private int speed = 4;
+    private int speed = 5;
     private boolean walking;
     private boolean isKeyPressed;
     
     private int animationFrame = 0;
     private int animationCounter = 0;
+    
+    Classroom classroom = (Classroom)getWorld();
+    Hallway hallway = (Hallway)getWorld();
     
     /**
      * Act - do whatever the Lola wants to do. This method is called whenever
@@ -43,7 +48,7 @@ public class Lola extends Actor
         animationCounter++;
         if (!isKeyPressed)
         {
-            setImage(animateDown1);
+            setImage(animations[12]);
         }
     }
     
@@ -73,11 +78,19 @@ public class Lola extends Actor
             isKeyPressed = true;
             moveDown();
         }
-        if (Greenfoot.isKeyDown("e") && isTouching(TeacherDesk.class))
+        if (isTouching(ChalkBoard.class))
         {
-            Classroom classroom = (Classroom)getWorld();
-            classroom.setIsQandAActivated(true);
-            // ExitDoor.setIsOpen(true);
+            getWorld().showText("Press \"E\" to answer the question!", 200, 580);
+            if (Greenfoot.isKeyDown("e"))
+            {
+                Classroom classroom = (Classroom)getWorld();
+                classroom.setIsQandAActivated(true);
+                getWorld().showText("", 200, 580);
+            }
+        }
+        if (!isTouching(ChalkBoard.class))
+        {
+            getWorld().showText("", 200, 580);
         }
     }
     
@@ -87,8 +100,19 @@ public class Lola extends Actor
         {
             if (!getIntersectingObjects(ExitDoor.class).isEmpty())
             {
-                Classroom classroom = (Classroom)getWorld();
-                classroom.enterHallway();
+                classroom.setIsQandAAnswered(false);
+                if (this.getWorld().getClass() == Classroom.class && classroom.getLevelCounter() != 4)
+                {
+                    classroom.enterHallway();
+                }
+                else if (this.getWorld().getClass() == Classroom.class && classroom.getLevelCounter() == 4)
+                {
+                    classroom.enterFinalLevel();
+                }
+                if (this.getWorld().getClass() == Hallway.class)
+                {
+                    hallway.enterClassroom();
+                }
             }
         }
     }
@@ -148,24 +172,29 @@ public class Lola extends Actor
     {
         if (animationFrame == 0)
         {
-            setImage(animateLeft1);
+            setImage(animations[0]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 1)
         {
-            setImage(animateLeft2);
+            setImage(animations[1]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 2)
         {
-            setImage(animateLeft3);
+            setImage(animations[2]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 3)
         {
-            setImage(animateLeft4);
+            setImage(animations[3]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 4)
         {
             animationFrame = 0;
-            setImage(animateLeft1);
+            setImage(animations[0]);
+            Greenfoot.delay(3);
         }
         animationFrame++;
         return;
@@ -178,24 +207,29 @@ public class Lola extends Actor
     {
         if (animationFrame == 0)
         {
-            setImage(animateRight1);
+            setImage(animations[4]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 1)
         {
-            setImage(animateRight2);
+            setImage(animations[5]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 2)
         {
-            setImage(animateRight3);
+            setImage(animations[6]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 3)
         {
-            setImage(animateRight4);
+            setImage(animations[7]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 4)
         {
             animationFrame = 0;
-            setImage(animateRight1);
+            setImage(animations[4]);
+            Greenfoot.delay(3);
         }
         animationFrame++;
         return;
@@ -208,24 +242,29 @@ public class Lola extends Actor
     {
         if (animationFrame == 0)
         {
-            setImage(animateUp1);
+            setImage(animations[8]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 1)
         {
-            setImage(animateUp2);
+            setImage(animations[9]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 2)
         {
-            setImage(animateUp3);
+            setImage(animations[10]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 3)
         {
-            setImage(animateUp4);
+            setImage(animations[11]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 4)
         {
             animationFrame = 0;
-            setImage(animateUp1);
+            setImage(animations[8]);
+            Greenfoot.delay(3);
         }
         animationFrame++;
         return;
@@ -238,39 +277,44 @@ public class Lola extends Actor
     {
         if (animationFrame == 0)
         {
-            setImage(animateDown1);
+            setImage(animations[12]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 1)
         {
-            setImage(animateDown2);
+            setImage(animations[13]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 2)
         {
-            setImage(animateDown3);
+            setImage(animations[14]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 3)
         {
-            setImage(animateDown4);
+            setImage(animations[15]);
+            Greenfoot.delay(3);
         }
         else if (animationFrame == 4)
         {
             animationFrame = 0;
-            setImage(animateDown1);
+            setImage(animations[12]);
+            Greenfoot.delay(3);
         }
         animationFrame++;
         return;
     }
     
     /**
-     * This method overrides the setLocation method to prevent Lola from walking through
-     * other objects.
+     * This method overrides the setLocation method to prevent Lola from
+     * walking through boundaries.
      */
     public void setLocation(int x, int y)
     {
         int oldX = getX();
         int oldY = getY();
         super.setLocation(x, y);
-        if(!getIntersectingObjects(Desk.class).isEmpty())
+        if(!getIntersectingObjects(Boundaries.class).isEmpty())
         {
             super.setLocation(oldX, oldY);
         }
