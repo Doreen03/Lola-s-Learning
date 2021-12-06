@@ -46,6 +46,8 @@ public class Lola extends Actor
         checkKey();
         enterDoor();
         animationCounter++;
+        finalLevelWin();
+        dead();
         if (!isKeyPressed)
         {
             setImage(animations[12]);
@@ -317,6 +319,28 @@ public class Lola extends Actor
         if(!getIntersectingObjects(Boundaries.class).isEmpty())
         {
             super.setLocation(oldX, oldY);
+        }
+    }
+    
+    /**
+     * This method ends the game in the final level
+     */
+    public void finalLevelWin()
+    {
+         if(isAtEdge())
+        {
+            Greenfoot.stop();
+        }
+    }
+    
+    /**
+     * This method ends the end if the player touches a obstacle
+     */
+    public void dead()
+    {
+        if(isTouching(ScrollingObstacles.class))
+        {
+            Greenfoot.stop();
         }
     }
 }

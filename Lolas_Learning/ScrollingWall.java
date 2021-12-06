@@ -10,9 +10,9 @@ public class ScrollingWall extends Scrolling
 {   
     public ScrollingWall()
     {
-        GreenfootImage image = new GreenfootImage("WoodPanel.png");
+        GreenfootImage image = new GreenfootImage("LongHallway3.png");
         image = getImage();
-        image.scale(3000,1000);
+        //image.scale(3000, 900);
         setImage(image);
     }
     

@@ -12,6 +12,7 @@ public class Answer extends Icons
     private final static int MAX_TRANS = 225;
     private final char ID;
     private static boolean isQuestionRight = false;
+    public static int grade = 100;
     
     private GreenfootImage[] answersL0 = {
         new GreenfootImage("L0Q1A1.png"),
@@ -113,7 +114,7 @@ public class Answer extends Icons
                 else
                 {
                     printQuestionIncorrect("2");
-                    pointsRemoved();
+                    grade -= 10;
                     isQuestionRight = false;
                     changeQuestion();
                 }
@@ -331,9 +332,10 @@ public class Answer extends Icons
      */
     public void pointsRemoved()
     {
+        FinalLevel finalLevel = (FinalLevel)getWorld();
         if(Greenfoot.mouseClicked(this))
         {
-            Scoreboard.grade -= 10;
+            grade -= 10;
         }
     }
     
@@ -698,4 +700,13 @@ public class Answer extends Icons
             setImage(answersL4);
         }
     }
+    
+        // /**
+     // * Subtracts points to the current grade.
+     // */
+    // public int subtractGrade(int points)
+    // {
+        // points = 10;
+        // return points;
+    // }
 }
