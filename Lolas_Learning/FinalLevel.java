@@ -33,7 +33,7 @@ public class FinalLevel extends World
 
     public void image()
     {
-        setBackground("LongHallway3.png");
+        setBackground("hallway_dark_loop.png");
     }
     public void countDown()
     {
@@ -64,6 +64,7 @@ public class FinalLevel extends World
     {
         Monster monster = new Monster();
         addObject(monster,28,272);
+        monster.getImage().scale(239, 216);
         Lola lola = new Lola();
         addObject(lola,160,271);
     }

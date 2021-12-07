@@ -10,7 +10,7 @@ public class Boundaries extends Actor
 {
     public Boundaries()
     {
-        // getImage().scale(width px, height px);
+        
     }
     
     /**

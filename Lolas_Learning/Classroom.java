@@ -24,9 +24,8 @@ public class Classroom extends World
     private GreenfootImage backgroundLevel0 = new GreenfootImage("level0classroom.png");
     private GreenfootImage backgroundLevel1 = new GreenfootImage("level1classroom.png");
     private GreenfootImage backgroundLevel2 = new GreenfootImage("level2classroom.png");
-    private GreenfootImage backgroundLevel3 = new GreenfootImage("level3sample.png");
-    private GreenfootImage backgroundLevel4 = new GreenfootImage("level4sample.png");
-    private GreenfootImage backgroundLevel5 = new GreenfootImage("level5sample.png");
+    private GreenfootImage backgroundLevel3 = new GreenfootImage("level3classroom.png");
+    private GreenfootImage backgroundLevel4 = new GreenfootImage("level4classroom.png");
 
     /**
      * Constructor for objects of class Classroom.

@@ -332,7 +332,6 @@ public class Answer extends Icons
      */
     public void pointsRemoved()
     {
-        FinalLevel finalLevel = (FinalLevel)getWorld();
         if(Greenfoot.mouseClicked(this))
         {
             grade -= 10;
