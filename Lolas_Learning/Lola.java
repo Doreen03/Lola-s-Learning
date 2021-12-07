@@ -47,9 +47,10 @@ public class Lola extends Actor
         enterDoor();
         animationCounter++;
         finalLevelWin();
-        dead();
+        ifTouchingObstacles();
+        ifTouchingMonster();
         if (!isKeyPressed)
-        {
+        {       
             setImage(animations[12]);
         }
     }
@@ -334,13 +335,23 @@ public class Lola extends Actor
     }
     
     /**
-     * This method ends the end if the player touches a obstacle
+     * This method ends the game if the player touches a obstacle
      */
-    public void dead()
+    public void ifTouchingObstacles()
     {
         if(isTouching(ScrollingObstacles.class))
         {
             Greenfoot.stop();
+            //showText("Game Over!", 500, 150);
+        }
+    }
+    
+        public void ifTouchingMonster()
+    {
+        if(isTouching(Monster.class))
+        {
+            Greenfoot.stop();
+            //showText("Game Over!", 500, 150);
         }
     }
 }

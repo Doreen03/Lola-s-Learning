@@ -14,6 +14,6 @@ public class Monster extends Actor
      */
     public void act()
     {
-        move(1);
+        move(2);
     }
 }
