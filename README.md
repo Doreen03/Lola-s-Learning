@@ -1,11 +1,11 @@
 # Lola's Learning
 Final Game Programming Project 
 
-Doreen Ansah, Amanda De Rosa and Emma Florent
-Tassia Camoes-Araujo and Ivan Miloslavov
-420-141-VA sect. 00003
-2021/12/13
-Lola's Learning © 2021 by Doreen Ansah, Amanda De Rosa, Emma Florent is licensed under CC BY 4.0 
+Doreen Ansah, Amanda De Rosa and Emma Florent\
+Tassia Camoes-Araujo and Ivan Miloslavov\
+420-141-VA sect. 00003\
+2021/12/13\
+Lola's Learning © 2021 by Doreen Ansah, Amanda De Rosa, Emma Florent is licensed under CC BY 4.0
 
 The main character, Lola, has to wander through classrooms and answer questions to proceed to the next room.
 All the classrooms are the same, except they slowly deteriorate into a horror-looking room.
@@ -48,9 +48,9 @@ SOFTWARE.
 =================================================================================
 
 ATTRIBUTIONS:
-Scoreboard created by Doreen Ansah
-Questions and Answers created by Amanda De Rosa
+Scoreboard created by Doreen Ansah\
+Questions and Answers created by Amanda De Rosa\
 Menu Screen/Credit Screen/Instructions Screen/End Screen/Victory Screen created by Emma Florent
 
-All else created by stepepson.
+All else created by stepepson.\
 Lola's Game Art © 2021 by stepepson is licensed under CC BY-NC 4.0 
