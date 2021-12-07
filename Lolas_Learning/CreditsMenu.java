@@ -8,18 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CreditsMenu extends MainMenuButtons
 {
-    public CreditsMenu()
-    {
-        GreenfootImage creditsButton = new GreenfootImage(200,70);
-        Font adjustedFont = new Font(true, false, 30);
-        creditsButton.setFont(adjustedFont);
-        creditsButton.setColor(Color.BLACK);
-        creditsButton.drawString("Credits",0,50);
-        setImage(creditsButton);
-    }
-    
+    GifImage credits = new GifImage("credits.gif");
     public void act()
     {
+        setImage(credits.getCurrentImage());
         checkMouse();
         checkClick(new CreditsPage());
     }

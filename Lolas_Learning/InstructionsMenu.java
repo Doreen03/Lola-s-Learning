@@ -8,18 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class InstructionsMenu extends MainMenuButtons
 {
-    public InstructionsMenu()
-    {
-        GreenfootImage instructionsButton = new GreenfootImage(250,70);
-        Font adjustedFont = new Font(true, false, 30);
-        instructionsButton.setFont(adjustedFont);
-        instructionsButton.setColor(Color.BLACK);
-        instructionsButton.drawString("How To Play",0,50);
-        setImage(instructionsButton);
-    }
-    
+    GifImage instructions = new GifImage("instructions.gif");
     public void act()
     {
+        setImage(instructions.getCurrentImage());
         checkMouse();
         checkClick(new InstructionsPage());
     }

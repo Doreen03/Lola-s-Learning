@@ -1,8 +1,6 @@
 #BlueJ class context
 comment0.target=CreditsMenu
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ CreditsMenu\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ CreditsMenu\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=CreditsMenu()
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment1.target=void\ act()
+numComments=2

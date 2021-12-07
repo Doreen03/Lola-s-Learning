@@ -36,5 +36,8 @@ public class MainMenu extends World
         creditsMenu.setLocation(1029,587);
         mainMenuText.setLocation(638,110);
         play.setLocation(588,288);
+        mainMenuText.setLocation(586,105);
+        instructionsMenu.setLocation(590,431);
+        creditsMenu.setLocation(592,583);
     }
 }

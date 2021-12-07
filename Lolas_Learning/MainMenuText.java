@@ -8,18 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainMenuText extends Actor
 {
-    public MainMenuText()
-    {
-        GreenfootImage mainMenuText = new GreenfootImage(500,70);
-        Font adjustedFont = new Font(true, false, 50);
-        mainMenuText.setFont(adjustedFont);
-        mainMenuText.setColor(Color.BLACK);
-        mainMenuText.drawString("Lola's Learning",0,50);
-        setImage(mainMenuText);
-    }
-
+    GifImage title = new GifImage("title.gif");
     public void act()
     {
-        // Add your action code here.
+        setImage(title.getCurrentImage());
     }
 }

@@ -8,18 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Play extends MainMenuButtons
 {
-    public Play()
-    {
-        GreenfootImage playButton = new GreenfootImage(110,70);
-        Font adjustedFont = new Font(true, false, 50);
-        playButton.setFont(adjustedFont);
-        playButton.setColor(Color.BLACK);
-        playButton.drawString("Play",0,50);
-        setImage(playButton);
-    }
-    
+    GifImage play = new GifImage("play.gif");
     public void act()
     {
+        setImage(play.getCurrentImage());
         checkMouse();
         checkClick(new Classroom());
     }
