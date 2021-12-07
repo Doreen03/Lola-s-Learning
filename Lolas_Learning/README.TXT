@@ -1,5 +1,6 @@
 Lola's Learning
 ===========================
+Lola's Learning © 2021 by Doreen Ansah, Amanda De Rosa, Emma Florent is licensed under CC BY 4.0 
 
 The main character, Lola, has to wander through classrooms and answer questions to proceed to the next room.
 All the classrooms are the same, except they slowly deteriorate into a horror-looking room.
