@@ -21,7 +21,10 @@ public class Scoreboard extends Icons
     private GreenfootImage scoreboard10 = new GreenfootImage("grade10.png");
     private GreenfootImage scoreboard11 = new GreenfootImage("grade0.png");
     
-    
+    /**
+     * This method changes the grade image when the garde goes 
+     * down by 10.
+     */
     public Scoreboard()
     {
          if(Answer.grade == 100)

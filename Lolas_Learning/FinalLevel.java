@@ -10,6 +10,7 @@ public class FinalLevel extends World
 {
     public static int grade = 100;
     private int time = 850;
+    
     /**
      * Constructor for objects of class FinalLevel.
      * 
@@ -22,7 +23,10 @@ public class FinalLevel extends World
         prepare();
         showTime();
     }
-
+    
+    /**
+     * This method randomizes the loctaion of the obstacles
+     */
     public void act()
     {
         if (Greenfoot.getRandomNumber(100) < 2) {
@@ -30,11 +34,19 @@ public class FinalLevel extends World
         }
         countDown();
     }
-
+    
+    /**
+     * This method sets the backround
+     */
     public void image()
     {
         setBackground("hallway_dark_loop.png");
     }
+    
+    /**
+     * This method counts down the timer and ends the game once
+     * the timer reaches 0
+     */
     public void countDown()
     {
         time--;
@@ -46,11 +58,17 @@ public class FinalLevel extends World
         }
     }
     
+    /**
+     * This method generates the location of the timer
+     */
         private void showTime()
     {
         showText("Time: " + time, 1100,50);
     }
     
+    /**
+     * Once the game is over this method shows a string
+     */
      private void showGameOver()
     {
         showText("Time is up! Game Over!", 500, 150);
@@ -63,7 +81,7 @@ public class FinalLevel extends World
     private void prepare()
     {
         Monster monster = new Monster();
-        addObject(monster,28,272);
+        addObject(monster,-115,272);
         monster.getImage().scale(239, 216);
         Lola lola = new Lola();
         addObject(lola,160,271);
