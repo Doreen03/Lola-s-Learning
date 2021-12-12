@@ -19,6 +19,7 @@ public class CreditsPage extends World
         super(1152, 648, 1);
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
