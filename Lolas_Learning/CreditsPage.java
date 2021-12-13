@@ -28,5 +28,8 @@ public class CreditsPage extends World
     {
         BackCredits backCredits = new BackCredits();
         addObject(backCredits,147,575);
+        CreditsBook creditsBook = new CreditsBook();
+        addObject(creditsBook,585,327);
+        backCredits.setLocation(150,594);
     }
 }

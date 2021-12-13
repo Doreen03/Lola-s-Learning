@@ -28,5 +28,7 @@ public class InstructionsPage extends World
     {
         BackInstructions backInstructions = new BackInstructions();
         addObject(backInstructions,150,586);
+        InstructionsBook instructionsBook = new InstructionsBook();
+        addObject(instructionsBook,595,324);
     }
 }
