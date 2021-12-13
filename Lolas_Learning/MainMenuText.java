@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainMenuText extends Actor
 {
-    GifImage title = new GifImage("title.gif");
+    GifImage title = new GifImage("title2.gif");
     public void act()
     {
         setImage(title.getCurrentImage());

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CreditsMenu extends MainMenuButtons
 {
-    GifImage credits = new GifImage("credits.gif");
+    GifImage credits = new GifImage("credits2.gif");
     public void act()
     {
         setImage(credits.getCurrentImage());

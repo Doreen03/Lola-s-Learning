@@ -41,5 +41,15 @@ public class MainMenu extends World
         //creditsMenu.setLocation(592,583);
         Notebook notebook = new Notebook();
         addObject(notebook,587,309);
+        Play play = new Play();
+        addObject(play,607,347);
+        CreditsMenu creditsMenu = new CreditsMenu();
+        addObject(creditsMenu,608,479);
+        InstructionsMenu instructionsMenu = new InstructionsMenu();
+        addObject(instructionsMenu,606,528);
+        MainMenuText mainMenuText = new MainMenuText();
+        addObject(mainMenuText,601,125);
+        BotomTitle botomTitle = new BotomTitle();
+        addObject(botomTitle,601,200);
     }
 }

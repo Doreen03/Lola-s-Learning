@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class InstructionsMenu extends MainMenuButtons
 {
-    GifImage instructions = new GifImage("instructions.gif");
+    GifImage instructions = new GifImage("instructions2.gif");
     public void act()
     {
         setImage(instructions.getCurrentImage());
