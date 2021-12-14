@@ -12,7 +12,7 @@ public class Answer extends Icons
     private final static int MAX_TRANS = 225;
     private final char ID;
     private static boolean isQuestionRight = false;
-    public static int grade = 100;
+    //public static int grade = 100;
     
     private GreenfootImage[] answersL0 = {
         new GreenfootImage("L0Q1A1.png"),
@@ -114,7 +114,7 @@ public class Answer extends Icons
                 else
                 {
                     printQuestionIncorrect("2");
-                    grade -= 10;
+                    Scoreboard.grade -= 10;
                     isQuestionRight = false;
                     changeQuestion();
                 }
