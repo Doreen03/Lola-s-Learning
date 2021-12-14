@@ -11,14 +11,25 @@ public class FinalLevel extends World
     public static int grade = 100;
     private int time = 850;
     
+    private GreenfootImage scoreboard1 = new GreenfootImage("grade100.png");
+    private GreenfootImage scoreboard2 = new GreenfootImage("grade90.png");
+    private GreenfootImage scoreboard3 = new GreenfootImage("grade80.png");
+    private GreenfootImage scoreboard4 = new GreenfootImage("grade70.png");
+    private GreenfootImage scoreboard5 = new GreenfootImage("grade60.png");
+    private GreenfootImage scoreboard6 = new GreenfootImage("grade50.png");
+    private GreenfootImage scoreboard7 = new GreenfootImage("grade40.png");
+    private GreenfootImage scoreboard8 = new GreenfootImage("grade30.png");
+    private GreenfootImage scoreboard9 = new GreenfootImage("grade20.png");
+    private GreenfootImage scoreboard10 = new GreenfootImage("grade10.png");
+    private GreenfootImage scoreboard11 = new GreenfootImage("grade0.png");
+    
     /**
      * Constructor for objects of class FinalLevel.
      * 
      */
     public FinalLevel()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1152, 390, 1, false);
+        super(1152, 480, 1, false);
         addObject(new ScrollingWall(),1450,195);
         prepare();
         createBoundaries();
@@ -51,7 +62,7 @@ public class FinalLevel extends World
      */
     public void image()
     {
-        setBackground("hallway_dark_loop.png");
+        setBackground("hallway_dark_loop2.png");
     }
     
     /**
@@ -66,6 +77,7 @@ public class FinalLevel extends World
         {
             Greenfoot.stop();
             showGameOver();
+            Scoreboard.grade = 100;
         }
     }
     
@@ -82,7 +94,7 @@ public class FinalLevel extends World
      */
      private void showGameOver()
     {
-        showText("Time is up! Game Over!", 500, 150);
+        showText("Time is up! Game Over!", 600, 240);
     }
     
     /**
@@ -91,9 +103,9 @@ public class FinalLevel extends World
     private void prepare()
     {
         Monster monster = new Monster();
-        addObject(monster,-115,272);
+        addObject(monster,100,272);
         monster.getImage().scale(239, 216);
         Lola lola = new Lola();
-        addObject(lola,160,271);
+        addObject(lola,326,271);
     }
 }

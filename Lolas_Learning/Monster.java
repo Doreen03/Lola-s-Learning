@@ -16,12 +16,9 @@ public class Monster extends Actor
      */
     public void act()
     {
-        move(3);
         if (getWorld().getObjects(Lola.class).isEmpty())
         {
             return;
         }
-        Actor lola = (Actor)getWorld().getObjects(Lola.class).get(0);
-        turnTowards(lola.getX(), lola.getY());
     }
 }

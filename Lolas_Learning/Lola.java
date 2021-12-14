@@ -46,7 +46,6 @@ public class Lola extends Actor
         checkKey();
         enterDoor();
         animationCounter++;
-        finalLevelWin();
         ifTouchingObstacles();
         ifTouchingMonster();
         if (!isKeyPressed)
@@ -324,13 +323,13 @@ public class Lola extends Actor
     }
     
     /**
-     * This method ends the game in the final level
+     * Remove points if a question is wrong.
      */
-    public void finalLevelWin()
+    public void pointsRemoved()
     {
-         if(isAtEdge())
+        if(isTouching(ScrollingObstacles.class))
         {
-            Greenfoot.stop();
+            Scoreboard.grade -= 10;
         }
     }
     
@@ -341,8 +340,16 @@ public class Lola extends Actor
     {
         if(isTouching(ScrollingObstacles.class))
         {
+            removeTouching(ScrollingObstacles.class);
+            pointsRemoved();
+        }
+    }
+    
+    public void GameOver() {
+        if (Scoreboard.grade == 0)
+        {
             Greenfoot.stop();
-            //showText("Game Over!", 500, 150);
+            Scoreboard.grade = 100;
         }
     }
     
@@ -351,7 +358,7 @@ public class Lola extends Actor
         if(isTouching(Monster.class))
         {
             Greenfoot.stop();
-            //showText("Game Over!", 500, 150);
+            Scoreboard.grade = 100;
         }
     }
 }

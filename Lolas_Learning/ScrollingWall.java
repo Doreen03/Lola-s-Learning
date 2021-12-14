@@ -12,7 +12,6 @@ public class ScrollingWall extends Scrolling
     {
         GreenfootImage image = new GreenfootImage("hallway_dark_loop.png");
         image = getImage();
-        //image.scale(3000, 900);
         setImage(image);
     }
     

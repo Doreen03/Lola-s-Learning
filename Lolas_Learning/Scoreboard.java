@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Scoreboard extends Icons
 {
-    //public static int grade = 100;
+    public static int grade = 100;
+    
     private GreenfootImage scoreboard1 = new GreenfootImage("grade100.png");
     private GreenfootImage scoreboard2 = new GreenfootImage("grade90.png");
     private GreenfootImage scoreboard3 = new GreenfootImage("grade80.png");
@@ -27,43 +28,43 @@ public class Scoreboard extends Icons
      */
     public Scoreboard()
     {
-         if(Answer.grade == 100)
+        if (grade == 100)
         {
             setImage(scoreboard1);
         }
-        if(Answer.grade == 90)
+        if (grade == 90)
         {
             setImage(scoreboard2);
         }
-        if(Answer.grade == 80)
+        if (grade == 80)
         {
             setImage(scoreboard3);
         }
-        if(Answer.grade == 70)
+        if (grade == 70)
         {
             setImage(scoreboard4);
         }
-        if(Answer.grade == 60)
+        if (grade == 60)
         {
             setImage(scoreboard5);
         }
-        if(Answer.grade == 50)
+        if (grade == 50)
         {
             setImage(scoreboard6);
         }
-        if(Answer.grade == 40)
+        if (grade == 40)
         {
             setImage(scoreboard7);
         }
-        if(Answer.grade == 30)
+        if (grade == 30)
         {
             setImage(scoreboard8);
         }
-        if(Answer.grade == 20)
+        if (grade == 20)
         {
             setImage(scoreboard9);
         }
-        if(Answer.grade == 10)
+        if (grade == 10)
         {
             setImage(scoreboard10);
         }
