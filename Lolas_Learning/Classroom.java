@@ -55,22 +55,27 @@ public class Classroom extends World
         if (level == 0)
         {
             setBackground(backgroundLevel0);
+            prepare();
         }
         else if (level == 1)
         {
             setBackground(backgroundLevel1);
+            prepare();
         }
         else if (level == 2)
         {
             setBackground(backgroundLevel2);
+            prepare();
         }
         else if (level == 3)
         {
             setBackground(backgroundLevel3);
+            prepare();
         }
         else if (level == 4)
         {
             setBackground(backgroundLevel4);
+            prepare();
         }
         isQandAActivated = false;
         createDoor();
