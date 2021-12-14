@@ -2,5 +2,11 @@
 comment0.target=MainMenuText
 comment0.text=\n\ Write\ a\ description\ of\ class\ MainMenuText\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=void\ act()
-numComments=2
+comment1.target=void\ checkMouse()
+comment2.params=world
+comment2.target=void\ checkClick(greenfoot.World)
+comment3.params=adjust
+comment3.target=void\ adjTrans(int)
+comment4.params=
+comment4.target=void\ act()
+numComments=5

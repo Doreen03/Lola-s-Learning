@@ -17,5 +17,20 @@ public class Gameover extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1152, 648, 1); 
+        prepare();
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        GameOverBook gameOverBook = new GameOverBook();
+        addObject(gameOverBook,595,276);
+        GameOverTxt gameOverTxt = new GameOverTxt();
+        addObject(gameOverTxt,564,319);
+        GameOverRestart gameOverRestart = new GameOverRestart();
+        addObject(gameOverRestart,340,559);
     }
 }
