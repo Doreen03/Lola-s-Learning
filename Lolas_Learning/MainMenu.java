@@ -8,16 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainMenu extends World
 {
-
+    GreenfootSound music = new GreenfootSound("MenuMusic.mp3");
+    
     /**
      * Constructor for objects of class MainMenu.
      * 
      */
     public MainMenu()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1152, 648, 1); 
         prepare();
+    }
+    
+    public void act()
+    {
+	music.playLoop();
     }
     
     private void prepare()
