@@ -28,43 +28,43 @@ public class Scoreboard extends Icons
      */
     public Scoreboard()
     {
-        if (grade == 100)
+        if (Scoreboard.grade == 100)
         {
             setImage(scoreboard1);
         }
-        if (grade == 90)
+        if (Scoreboard.grade == 90)
         {
             setImage(scoreboard2);
         }
-        if (grade == 80)
+        if (Scoreboard.grade == 80)
         {
             setImage(scoreboard3);
         }
-        if (grade == 70)
+        if (Scoreboard.grade == 70)
         {
             setImage(scoreboard4);
         }
-        if (grade == 60)
+        if (Scoreboard.grade == 60)
         {
             setImage(scoreboard5);
         }
-        if (grade == 50)
+        if (Scoreboard.grade == 50)
         {
             setImage(scoreboard6);
         }
-        if (grade == 40)
+        if (Scoreboard.grade == 40)
         {
             setImage(scoreboard7);
         }
-        if (grade == 30)
+        if (Scoreboard.grade == 30)
         {
             setImage(scoreboard8);
         }
-        if (grade == 20)
+        if (Scoreboard.grade == 20)
         {
             setImage(scoreboard9);
         }
-        if (grade == 10)
+        if (Scoreboard.grade == 10)
         {
             setImage(scoreboard10);
         }

@@ -11,18 +11,6 @@ public class FinalLevel extends World
     public static int grade = 100;
     private int time = 850;
     
-    private GreenfootImage scoreboard1 = new GreenfootImage("grade100.png");
-    private GreenfootImage scoreboard2 = new GreenfootImage("grade90.png");
-    private GreenfootImage scoreboard3 = new GreenfootImage("grade80.png");
-    private GreenfootImage scoreboard4 = new GreenfootImage("grade70.png");
-    private GreenfootImage scoreboard5 = new GreenfootImage("grade60.png");
-    private GreenfootImage scoreboard6 = new GreenfootImage("grade50.png");
-    private GreenfootImage scoreboard7 = new GreenfootImage("grade40.png");
-    private GreenfootImage scoreboard8 = new GreenfootImage("grade30.png");
-    private GreenfootImage scoreboard9 = new GreenfootImage("grade20.png");
-    private GreenfootImage scoreboard10 = new GreenfootImage("grade10.png");
-    private GreenfootImage scoreboard11 = new GreenfootImage("grade0.png");
-    
     /**
      * Constructor for objects of class FinalLevel.
      * 

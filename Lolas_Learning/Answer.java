@@ -328,7 +328,7 @@ public class Answer extends Icons
     {
         if(Greenfoot.mouseClicked(this))
         {
-            grade -= 10;
+            Scoreboard.grade -= 10;
         }
     }
     
