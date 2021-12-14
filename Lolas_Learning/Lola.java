@@ -349,7 +349,7 @@ public class Lola extends Actor
         if (Scoreboard.grade == 0)
         {
             Greenfoot.stop();
-            //new Gameover();
+            Greenfoot.setWorld(new Gameover());
             Scoreboard.grade = 100;
         }
     }
@@ -359,7 +359,7 @@ public class Lola extends Actor
         if(isTouching(Monster.class))
         {
             Greenfoot.stop();
-            new Gameover();
+            Greenfoot.setWorld(new Gameover());
             Scoreboard.grade = 100;
         }
     }
