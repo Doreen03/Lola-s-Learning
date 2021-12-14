@@ -75,7 +75,6 @@ public class FinalLevel extends World
         showTime();
         if (time == 0)
         {
-            Greenfoot.stop();
             Greenfoot.setWorld(new Victoryscreen());
             Scoreboard.grade = 100;
         }
