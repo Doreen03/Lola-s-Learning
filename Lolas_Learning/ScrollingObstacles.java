@@ -12,7 +12,7 @@ public class ScrollingObstacles extends Scrolling
     
     public ScrollingObstacles()
     {
-        GreenfootImage cannon = new GreenfootImage("cannonBall.png");
+        GreenfootImage cannon = new GreenfootImage("blob_attack.png");
         cannon = getImage();
         cannon.scale(50, 50);
         setImage(cannon);

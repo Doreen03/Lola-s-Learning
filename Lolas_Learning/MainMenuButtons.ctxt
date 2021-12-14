@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=MainMenuButtons
-comment0.text=\n\ Write\ a\ description\ of\ class\ MainMenuButtons\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MainMenuButtons\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ checkMouse()
-comment1.text=\n\ Checks\ if\ the\ mouse\ is\ hovering\ over\ this.\ If\ it\ is,\ make\ the\ image\ more\ transparent.\n
+comment1.text=\r\n\ Checks\ if\ the\ mouse\ is\ hovering\ over\ this.\ If\ it\ is,\ make\ the\ image\ more\ transparent.\r\n
 comment2.params=world
 comment2.target=void\ checkClick(greenfoot.World)
-comment2.text=\n\ Checks\ to\ see\ if\ the\ icon\ is\ pressed.\ If\ it\ is,\ changes\ world\ to\ the\ indicated\ world.\n
+comment2.text=\r\n\ Checks\ to\ see\ if\ the\ icon\ is\ pressed.\ If\ it\ is,\ changes\ world\ to\ the\ indicated\ world.\r\n
 comment3.params=adjust
 comment3.target=void\ adjTrans(int)
-comment3.text=\n\ Changes\ the\ transparency\ of\ the\ image\ if\ hovered\ over.\n
+comment3.text=\r\n\ Changes\ the\ transparency\ of\ the\ image\ if\ hovered\ over.\r\n
 numComments=4

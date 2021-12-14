@@ -316,12 +316,6 @@ public class Answer extends Icons
                 isQuestionRight = false;
                 changeQuestion();
             }
-            if (classroom.getLevelCounter() == 4)
-            {
-                classroom.showText("run.", classroom.getWidth()/2, classroom.getHeight()/2);
-                Greenfoot.delay(10);
-                classroom.showText("", classroom.getWidth()/2, classroom.getHeight()/2);
-            }
             classroom.removeQandAs();
             ExitDoor.setIsOpen(true);
         }
@@ -370,16 +364,16 @@ public class Answer extends Icons
     
     private void printQuestionCorrect()
     {
-        getWorld().showText("Correct! Great Job!", 200, 200);
+        getWorld().showText("Correct! Great Job!", getWorld().getWidth() / 2, 257);
         Greenfoot.delay(100);
-        getWorld().showText("", 200, 200);
+        getWorld().showText("", getWorld().getWidth() / 2, 257);
     }
     
     private void printQuestionIncorrect(String correctAnswer)
     {
-        getWorld().showText("Incorrect. Correct answer is: " + correctAnswer, 200, 200);
+        getWorld().showText("Incorrect. Correct answer is: " + correctAnswer, getWorld().getWidth() / 2, 257);
         Greenfoot.delay(100);
-        getWorld().showText("", 200, 200);
+        getWorld().showText("", getWorld().getWidth() / 2, 257);
     }
     
     public static boolean getIsQuestionRight()

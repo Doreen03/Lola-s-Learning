@@ -21,11 +21,12 @@ public class FinalLevel extends World
         super(1152, 390, 1, false);
         addObject(new ScrollingWall(),1450,195);
         prepare();
+        createBoundaries();
         showTime();
     }
     
     /**
-     * This method randomizes the loctaion of the obstacles
+     * This method randomizes the location of the obstacles
      */
     public void act()
     {
@@ -33,6 +34,16 @@ public class FinalLevel extends World
             addObject( new  ScrollingObstacles(), Greenfoot.getRandomNumber(1152),390);
         }
         countDown();
+    }
+    
+    /**
+     * Creates the boundaries for the Final Level
+     */
+    private void createBoundaries()
+    {
+        Boundaries boundaryTop = new Boundaries();
+        boundaryTop.getImage().scale(1152, 90);
+        addObject(boundaryTop, getWidth() / 2, 28);
     }
     
     /**
@@ -75,8 +86,7 @@ public class FinalLevel extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Prepares all the objects and boundaries for the final level.
      */
     private void prepare()
     {

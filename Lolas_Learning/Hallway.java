@@ -25,14 +25,31 @@ public class Hallway extends World
         spawnLola();
     }
     
-    public void act ()
-    {
-        
-    }
-    
     private void createBoundaries()
     {
-    
+        Boundaries boundaryTop = new Boundaries();
+        boundaryTop.getImage().scale(1152, 90);
+        addObject(boundaryTop, getWidth() / 2, 155);
+        
+        Boundaries boundaryBottom = new Boundaries();
+        boundaryBottom.getImage().scale(1152, 90);
+        addObject(boundaryBottom, getWidth() / 2, 570);
+        
+        Boundaries boundaryRightDoor = new Boundaries();
+        boundaryRightDoor.getImage().scale(90, 648);
+        addObject(boundaryRightDoor, 1025, getHeight() / 2);
+        
+        Boundaries boundaryLeftDoor = new Boundaries();
+        boundaryLeftDoor.getImage().scale(90, 648);
+        addObject(boundaryLeftDoor, 48, getHeight() / 2);
+        
+        Boundaries boundaryLeftLevel = new Boundaries();
+        boundaryLeftLevel.getImage().scale(97, 180);
+        addObject(boundaryLeftLevel, 128, 531);
+        
+        Boundaries boundaryLeftLevel2 = new Boundaries();
+        boundaryLeftLevel2.getImage().scale(97, 180);
+        addObject(boundaryLeftLevel2, 128, 165);
     }
     
     /**
@@ -50,7 +67,7 @@ public class Hallway extends World
     private void spawnLola()
     {
         Lola lola = new Lola();
-        addObject(lola, 100, 370);
+        addObject(lola, 135, 347);
     }
     
     /**
@@ -58,7 +75,6 @@ public class Hallway extends World
      */
     public static void enterClassroom()
     {
-        
         if (Answer.getIsQuestionRight())
         {
             Classroom.increaseQuestion();

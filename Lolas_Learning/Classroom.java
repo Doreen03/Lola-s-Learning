@@ -45,8 +45,8 @@ public class Classroom extends World
     }
     
     /**
-     * Constructor for objects of class Classroom.
-     * 
+     * Constructor for objects of class Classroom. 
+     * Different constructor for each level.
      */
     public Classroom(int level)
     {    
@@ -55,27 +55,22 @@ public class Classroom extends World
         if (level == 0)
         {
             setBackground(backgroundLevel0);
-            prepare(0);
         }
         else if (level == 1)
         {
             setBackground(backgroundLevel1);
-            prepare(1);
         }
         else if (level == 2)
         {
             setBackground(backgroundLevel2);
-            prepare(2);
         }
         else if (level == 3)
         {
             setBackground(backgroundLevel3);
-            prepare(3);
         }
         else if (level == 4)
         {
             setBackground(backgroundLevel4);
-            prepare(4);
         }
         isQandAActivated = false;
         createDoor();
@@ -100,8 +95,7 @@ public class Classroom extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Prepares all the objects and boundaries for the classroom.
      */
     private void prepare()
     {
@@ -160,301 +154,34 @@ public class Classroom extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Increases the level counter and sets the question counter back to 1.
      */
-    private void prepare(int level)
-    {
-        chalkBoard.getImage().scale(215, 90);
-        addObject(chalkBoard, 638, 183);
-        if (level == 0)
-        {
-            addObject(new Scoreboard(),55,55);
-            
-            Boundaries boundaryTopLevel = new Boundaries();
-            boundaryTopLevel.getImage().scale(1152, 90);
-            addObject(boundaryTopLevel, getWidth() / 2, 45);
-        
-            Boundaries boundaryLeftLevel = new Boundaries();
-            boundaryLeftLevel.getImage().scale(90, 648);
-            addObject(boundaryLeftLevel, 48, getHeight() / 2);
-        
-            Boundaries boundaryLeftLevel2 = new Boundaries();
-            boundaryLeftLevel2.getImage().scale(97, 180);
-            addObject(boundaryLeftLevel2, 128, 165);
-        
-            Boundaries boundaryRightLevel = new Boundaries();
-            boundaryRightLevel.getImage().scale(90, 648);
-            addObject(boundaryRightLevel, 1113, getHeight() / 2);
-        
-            Boundaries boundaryRightLevel2 = new Boundaries();
-            boundaryRightLevel2.getImage().scale(90, 180);
-            addObject(boundaryRightLevel2, 1020, 120);
-        
-            Boundaries boundaryRightLevel3 = new Boundaries();
-            boundaryRightLevel3.getImage().scale(90, 180);
-            addObject(boundaryRightLevel3, 1020, 548);
-        
-            Boundaries boundaryRightLevel4 = new Boundaries();
-            boundaryRightLevel4.getImage().scale(90, 648);
-            addObject(boundaryRightLevel4, 1025, getHeight() / 2);
-        
-            Boundaries boundaryTeachersDesk = new Boundaries();
-            boundaryTeachersDesk.getImage().scale(97, 180);
-            addObject(boundaryTeachersDesk, 827,  154);
-        
-            Boundaries boundaryTeachersPlant = new Boundaries();
-            boundaryTeachersPlant.getImage().scale(97, 180);
-            addObject(boundaryTeachersPlant, 925, 40);
-        
-            Boundaries boundaryBottomLevel = new Boundaries();
-            boundaryBottomLevel.getImage().scale(1152, 42);
-            addObject(boundaryBottomLevel, getWidth() / 2, 630);
-        
-            Boundaries boundaryTopLeftDesk = new Boundaries();
-            boundaryTopLeftDesk.getImage().scale(541, 90);
-            addObject(boundaryTopLeftDesk, 186, 158);
-        
-            Boundaries boundaryBottomDesks = new Boundaries();
-            boundaryBottomDesks.getImage().scale(741, 90);
-            addObject(boundaryBottomDesks, 297, 484);
-        }
-        if (level == 1)
-        {
-            addObject(new Scoreboard(),55,55);
-            
-            Boundaries boundaryTopLevel = new Boundaries();
-            boundaryTopLevel.getImage().scale(1152, 90);
-            addObject(boundaryTopLevel, getWidth() / 2, 45);
-        
-            Boundaries boundaryLeftLevel = new Boundaries();
-            boundaryLeftLevel.getImage().scale(90, 648);
-            addObject(boundaryLeftLevel, 48, getHeight() / 2);
-        
-            Boundaries boundaryLeftLevel2 = new Boundaries();
-            boundaryLeftLevel2.getImage().scale(97, 180);
-            addObject(boundaryLeftLevel2, 128, 165);
-        
-            Boundaries boundaryRightLevel = new Boundaries();
-            boundaryRightLevel.getImage().scale(90, 648);
-            addObject(boundaryRightLevel, 1113, getHeight() / 2);
-        
-            Boundaries boundaryRightLevel2 = new Boundaries();
-            boundaryRightLevel2.getImage().scale(90, 180);
-            addObject(boundaryRightLevel2, 1020, 120);
-        
-            Boundaries boundaryRightLevel3 = new Boundaries();
-            boundaryRightLevel3.getImage().scale(90, 180);
-            addObject(boundaryRightLevel3, 1020, 548);
-        
-            Boundaries boundaryRightLevel4 = new Boundaries();
-            boundaryRightLevel4.getImage().scale(90, 648);
-            addObject(boundaryRightLevel4, 1025, getHeight() / 2);
-        
-            Boundaries boundaryTeachersDesk = new Boundaries();
-            boundaryTeachersDesk.getImage().scale(97, 180);
-            addObject(boundaryTeachersDesk, 827,  154);
-        
-            Boundaries boundaryTeachersPlant = new Boundaries();
-            boundaryTeachersPlant.getImage().scale(97, 180);
-            addObject(boundaryTeachersPlant, 925, 40);
-        
-            Boundaries boundaryBottomLevel = new Boundaries();
-            boundaryBottomLevel.getImage().scale(1152, 42);
-            addObject(boundaryBottomLevel, getWidth() / 2, 630);
-        
-            Boundaries boundaryTopLeftDesk = new Boundaries();
-            boundaryTopLeftDesk.getImage().scale(541, 90);
-            addObject(boundaryTopLeftDesk, 186, 158);
-        
-            Boundaries boundaryBottomDesks = new Boundaries();
-            boundaryBottomDesks.getImage().scale(741, 90);
-            addObject(boundaryBottomDesks, 297, 484);
-        }
-        if (level == 2)
-        {
-            addObject(new Scoreboard(),55,55);
-            
-            Boundaries boundaryTopLevel = new Boundaries();
-            boundaryTopLevel.getImage().scale(1152, 90);
-            addObject(boundaryTopLevel, getWidth() / 2, 45);
-        
-            Boundaries boundaryLeftLevel = new Boundaries();
-            boundaryLeftLevel.getImage().scale(90, 648);
-            addObject(boundaryLeftLevel, 48, getHeight() / 2);
-        
-            Boundaries boundaryLeftLevel2 = new Boundaries();
-            boundaryLeftLevel2.getImage().scale(97, 180);
-            addObject(boundaryLeftLevel2, 128, 165);
-        
-            Boundaries boundaryRightLevel = new Boundaries();
-            boundaryRightLevel.getImage().scale(90, 648);
-            addObject(boundaryRightLevel, 1113, getHeight() / 2);
-        
-            Boundaries boundaryRightLevel2 = new Boundaries();
-            boundaryRightLevel2.getImage().scale(90, 180);
-            addObject(boundaryRightLevel2, 1020, 120);
-        
-            Boundaries boundaryRightLevel3 = new Boundaries();
-            boundaryRightLevel3.getImage().scale(90, 180);
-            addObject(boundaryRightLevel3, 1020, 548);
-        
-            Boundaries boundaryRightLevel4 = new Boundaries();
-            boundaryRightLevel4.getImage().scale(90, 648);
-            addObject(boundaryRightLevel4, 1025, getHeight() / 2);
-        
-            Boundaries boundaryTeachersDesk = new Boundaries();
-            boundaryTeachersDesk.getImage().scale(97, 180);
-            addObject(boundaryTeachersDesk, 827,  154);
-        
-            Boundaries boundaryTeachersPlant = new Boundaries();
-            boundaryTeachersPlant.getImage().scale(97, 180);
-            addObject(boundaryTeachersPlant, 925, 40);
-        
-            Boundaries boundaryBottomLevel = new Boundaries();
-            boundaryBottomLevel.getImage().scale(1152, 42);
-            addObject(boundaryBottomLevel, getWidth() / 2, 630);
-        
-            Boundaries boundaryTopLeftDesk = new Boundaries();
-            boundaryTopLeftDesk.getImage().scale(541, 90);
-            addObject(boundaryTopLeftDesk, 186, 158);
-        
-            Boundaries boundaryBottomDesks = new Boundaries();
-            boundaryBottomDesks.getImage().scale(741, 90);
-            addObject(boundaryBottomDesks, 297, 484);
-        }
-        if (level == 3)
-        {
-            addObject(new Scoreboard(),55,55);
-            
-            Boundaries boundaryTopLevel = new Boundaries();
-            boundaryTopLevel.getImage().scale(1152, 90);
-            addObject(boundaryTopLevel, getWidth() / 2, 45);
-        
-            Boundaries boundaryLeftLevel = new Boundaries();
-            boundaryLeftLevel.getImage().scale(90, 648);
-            addObject(boundaryLeftLevel, 48, getHeight() / 2);
-        
-            Boundaries boundaryLeftLevel2 = new Boundaries();
-            boundaryLeftLevel2.getImage().scale(97, 180);
-            addObject(boundaryLeftLevel2, 128, 165);
-        
-            Boundaries boundaryRightLevel = new Boundaries();
-            boundaryRightLevel.getImage().scale(90, 648);
-            addObject(boundaryRightLevel, 1113, getHeight() / 2);
-        
-            Boundaries boundaryRightLevel2 = new Boundaries();
-            boundaryRightLevel2.getImage().scale(90, 180);
-            addObject(boundaryRightLevel2, 1020, 120);
-        
-            Boundaries boundaryRightLevel3 = new Boundaries();
-            boundaryRightLevel3.getImage().scale(90, 180);
-            addObject(boundaryRightLevel3, 1020, 548);
-        
-            Boundaries boundaryRightLevel4 = new Boundaries();
-            boundaryRightLevel4.getImage().scale(90, 648);
-            addObject(boundaryRightLevel4, 1025, getHeight() / 2);
-        
-            Boundaries boundaryTeachersDesk = new Boundaries();
-            boundaryTeachersDesk.getImage().scale(97, 180);
-            addObject(boundaryTeachersDesk, 827,  154);
-        
-            Boundaries boundaryTeachersPlant = new Boundaries();
-            boundaryTeachersPlant.getImage().scale(97, 180);
-            addObject(boundaryTeachersPlant, 925, 40);
-        
-            Boundaries boundaryBottomLevel = new Boundaries();
-            boundaryBottomLevel.getImage().scale(1152, 42);
-            addObject(boundaryBottomLevel, getWidth() / 2, 630);
-        
-            Boundaries boundaryTopLeftDesk = new Boundaries();
-            boundaryTopLeftDesk.getImage().scale(541, 90);
-            addObject(boundaryTopLeftDesk, 186, 158);
-        
-            Boundaries boundaryBottomDesks = new Boundaries();
-            boundaryBottomDesks.getImage().scale(741, 90);
-            addObject(boundaryBottomDesks, 297, 484);
-        }
-        if (level == 4)
-        {
-            addObject(new Scoreboard(),55,55);
-            
-            Boundaries boundaryTopLevel = new Boundaries();
-            boundaryTopLevel.getImage().scale(1152, 90);
-            addObject(boundaryTopLevel, getWidth() / 2, 45);
-        
-            Boundaries boundaryLeftLevel = new Boundaries();
-            boundaryLeftLevel.getImage().scale(90, 648);
-            addObject(boundaryLeftLevel, 48, getHeight() / 2);
-        
-            Boundaries boundaryLeftLevel2 = new Boundaries();
-            boundaryLeftLevel2.getImage().scale(97, 180);
-            addObject(boundaryLeftLevel2, 128, 165);
-        
-            Boundaries boundaryRightLevel = new Boundaries();
-            boundaryRightLevel.getImage().scale(90, 648);
-            addObject(boundaryRightLevel, 1113, getHeight() / 2);
-        
-            Boundaries boundaryRightLevel2 = new Boundaries();
-            boundaryRightLevel2.getImage().scale(90, 180);
-            addObject(boundaryRightLevel2, 1020, 120);
-        
-            Boundaries boundaryRightLevel3 = new Boundaries();
-            boundaryRightLevel3.getImage().scale(90, 180);
-            addObject(boundaryRightLevel3, 1020, 548);
-        
-            Boundaries boundaryRightLevel4 = new Boundaries();
-            boundaryRightLevel4.getImage().scale(90, 648);
-            addObject(boundaryRightLevel4, 1025, getHeight() / 2);
-        
-            Boundaries boundaryTeachersDesk = new Boundaries();
-            boundaryTeachersDesk.getImage().scale(97, 180);
-            addObject(boundaryTeachersDesk, 827,  154);
-        
-            Boundaries boundaryTeachersPlant = new Boundaries();
-            boundaryTeachersPlant.getImage().scale(97, 180);
-            addObject(boundaryTeachersPlant, 925, 40);
-        
-            Boundaries boundaryBottomLevel = new Boundaries();
-            boundaryBottomLevel.getImage().scale(1152, 42);
-            addObject(boundaryBottomLevel, getWidth() / 2, 630);
-        
-            Boundaries boundaryTopLeftDesk = new Boundaries();
-            boundaryTopLeftDesk.getImage().scale(541, 90);
-            addObject(boundaryTopLeftDesk, 186, 158);
-        
-            Boundaries boundaryBottomDesks = new Boundaries();
-            boundaryBottomDesks.getImage().scale(741, 90);
-            addObject(boundaryBottomDesks, 297, 484);
-        }
-    }
-    
     public static void increaseLevel() 
     {
         questionCounter = 1;
         levelCounter++;
     }
     
+    /**
+     * Increases the question counter.
+     * If you are at a certain question in the world, you will increase the level.
+     */
     public static void increaseQuestion()
     {
         if (levelCounter == 0 && questionCounter == 3)
         {
-            questionCounter = 1;
             increaseLevel();
         }
         else if (levelCounter == 1 && questionCounter == 4)
         {
-            questionCounter = 1;
             increaseLevel();
         }
         else if (levelCounter == 2 && questionCounter == 4)
         {
-            questionCounter = 1;
             increaseLevel();
         }
         else if (levelCounter == 3 && questionCounter == 4)
         {
-            questionCounter = 1;
             increaseLevel();
         }
         else
