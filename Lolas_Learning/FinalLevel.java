@@ -107,5 +107,6 @@ public class FinalLevel extends World
         monster.getImage().scale(239, 216);
         Lola lola = new Lola();
         addObject(lola,326,271);
+        addObject(new Scoreboard(),55,55);
     }
 }
