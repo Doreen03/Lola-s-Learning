@@ -10,7 +10,7 @@ public class ScrollingWall extends Scrolling
 {   
     public ScrollingWall()
     {
-        GreenfootImage image = new GreenfootImage("hallway_dark_loop.png");
+        GreenfootImage image = new GreenfootImage("hallway_dark_loop2.png");
         image = getImage();
         setImage(image);
     }

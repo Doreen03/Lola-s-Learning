@@ -42,7 +42,7 @@ public class FinalLevel extends World
     public void act()
     {
         if (Greenfoot.getRandomNumber(100) < 2) {
-            addObject( new  ScrollingObstacles(), Greenfoot.getRandomNumber(1152),390);
+            addObject( new  ScrollingObstacles(), Greenfoot.getRandomNumber(1152),480);
         }
         countDown();
     }
@@ -76,7 +76,7 @@ public class FinalLevel extends World
         if (time == 0)
         {
             Greenfoot.stop();
-            showGameOver();
+            new Victoryscreen();
             Scoreboard.grade = 100;
         }
     }
@@ -89,13 +89,6 @@ public class FinalLevel extends World
         showText("Time: " + time, 1100,50);
     }
     
-    /**
-     * Once the game is over this method shows a string
-     */
-     private void showGameOver()
-    {
-        showText("Time is up! Game Over!", 600, 240);
-    }
     
     /**
      * Prepares all the objects and boundaries for the final level.
